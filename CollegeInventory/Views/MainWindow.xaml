@@ -22,7 +22,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Background="#1e1e1e">
             <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
-                    Foreground="#aeaeae">
+                    Foreground="#aeaeae"
+                    Command="{Binding GoToLocationPage}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ClipboardListOutline"
                                          Width="25" Height="25"/>
@@ -30,7 +31,8 @@
                                FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatLightButton}">
+            <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
+                    Command="{Binding GoToHistoryPage}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ClipboardTextClockOutline"
                                              Width="25" Height="25"/>

@@ -7,6 +7,21 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CRUD\Equipment\AddEquipmentWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CRUD\Furniture\AddFurnitureWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CRUD\Location\AddLocationWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CRUD\Matrix\AddProductWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CRUD\Room\AddRoomWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\EquipmentPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +48,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\CRUD\Equipment\AddEquipmentWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CRUD\Furniture\AddFurnitureWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CRUD\Location\AddLocationWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CRUD\Matrix\AddProductWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CRUD\Room\AddRoomWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\EquipmentPage.xaml">
       <SubType>Designer</SubType>
     </Page>

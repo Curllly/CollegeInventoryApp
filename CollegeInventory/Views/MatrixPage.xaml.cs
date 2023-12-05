@@ -26,5 +26,10 @@ namespace CollegeInventory.Views
             InitializeComponent();
             DataContext = new MatrixViewModel();
         }
+
+        private void AddNewProduct(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

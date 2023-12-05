@@ -45,6 +45,8 @@ namespace CollegeInventory.ViewModels
             GoToRoomPage = new RelayCommand(goToRoomPage, CanOpenPage);
             GoToFurniturePage = new RelayCommand(goToFurniturePage, CanOpenPage);
             GoToMatrixPage = new RelayCommand(goToMatrixPage, CanOpenPage);
+            GoToLocationPage = new RelayCommand(goToLocationPage, CanOpenPage);
+            GoToHistoryPage = new RelayCommand(goToHistoryPage, CanOpenPage);
         }
 
         // Commands
@@ -53,6 +55,8 @@ namespace CollegeInventory.ViewModels
         public ICommand GoToRoomPage { get; set; }
         public ICommand GoToFurniturePage { get; set; }
         public ICommand GoToMatrixPage { get; set; }
+        public ICommand GoToLocationPage { get; set; }
+        public ICommand GoToHistoryPage { get; set; }
 
         private bool CanOpenPage(object obj)
         {
@@ -74,6 +78,14 @@ namespace CollegeInventory.ViewModels
         private void goToMatrixPage(object obj)
         {
             CurrentPage = new Uri("MatrixPage.xaml", UriKind.Relative);
+        }
+        private void goToLocationPage(object obj)
+        {
+            CurrentPage = new Uri("LocationPage.xaml", UriKind.Relative);
+        }
+        private void goToHistoryPage(object obj)
+        {
+            CurrentPage = new Uri("HistoryPage.xaml", UriKind.Relative);
         }
     }
 }
