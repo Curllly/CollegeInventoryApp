@@ -21,6 +21,8 @@ public partial class CollegeInventoryContext : DbContext
 
     public virtual DbSet<Matrix> Matrices { get; set; }
 
+    public virtual DbSet<ObjectType> ObjectTypes { get; set; }
+
     public virtual DbSet<Room> Rooms { get; set; }
 
     public virtual DbSet<RoomType> RoomTypes { get; set; }
@@ -31,7 +33,7 @@ public partial class CollegeInventoryContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server = DESKTOP-8CP2VS3\\SQLEXPRESS; Database = CollegeInventory; Integrated Security = true; TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server = DESKTOP-8CP2VS3\\SQLEXPRESS; Database = CollegeInventory; TrustServerCertificate=True; Integrated Security = true;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -51,6 +53,11 @@ public partial class CollegeInventoryContext : DbContext
         modelBuilder.Entity<EquipmentType>(entity =>
         {
             entity.Property(e => e.Name).HasMaxLength(50);
+
+            entity.HasOne(d => d.ObjectType).WithMany(p => p.EquipmentTypes)
+                .HasForeignKey(d => d.ObjectTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_EquipmentTypes_ObjectTypes");
         });
 
         modelBuilder.Entity<Matrix>(entity =>
@@ -63,6 +70,11 @@ public partial class CollegeInventoryContext : DbContext
                 .HasForeignKey(d => d.EquipmentTypeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Matrix_EquipmentTypes");
+        });
+
+        modelBuilder.Entity<ObjectType>(entity =>
+        {
+            entity.Property(e => e.Name).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Room>(entity =>

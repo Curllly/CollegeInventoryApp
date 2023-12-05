@@ -141,3 +141,8 @@ D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-win
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\NotificationPage.baml
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\RoomPage.g.cs
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\RoomPage.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\CollegeInventory.sourcelink.json
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\HistoryPage.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\LocationPage.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\HistoryPage.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\LocationPage.baml

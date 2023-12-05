@@ -3,14 +3,21 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:converter="clr-namespace:CollegeInventory.Converters"
       xmlns:local="clr-namespace:CollegeInventory.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MatrixPage">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <converter:EqipmentTypeIdToName x:Key="EqipmentTypeIdToName" />
+            <converter:RubleConverter x:Key="RubleConverter" />
+            <converter:ServiceLifeToMonthConverter x:Key="ServiceLifeToMonthConverter" />
+        </ResourceDictionary>
+    </Page.Resources>
     <DockPanel>
         <Label DockPanel.Dock="Top" FontSize="35" FontWeight="Bold"
-       Content="Матрица оборудования" Margin="0 0 0 0" />
+       Content="Матрица активов" Margin="0 0 0 0" />
         <StackPanel Orientation="Horizontal"
             Background="LightGray" DockPanel.Dock="Top">
             <Label Content="Поиск: " FontSize="18" VerticalAlignment="Center" />
@@ -21,8 +28,26 @@
             <Label Content="Фильтрация: " Margin="10 0 0 0" VerticalAlignment="Center" />
             <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         </StackPanel>
-        <ListView>
-            
+        <ListView ItemsSource="{Binding Matrix}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#323335" CornerRadius="15" BorderBrush="Transparent"
+                            BorderThickness="1" Padding="15" HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <Label Content="{Binding Name}" FontSize="25" FontWeight="Bold"
+                                   Foreground="#F8F8F8"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding EquipmentTypeId, Converter={StaticResource EqipmentTypeIdToName}}" FontSize="22"
+                                       Foreground="#F8F8F8"/>
+                                <Label Content="{Binding Price, Converter={StaticResource RubleConverter}}" FontSize="22"
+                                       Foreground="#F8F8F8"/>
+                                <Label Content="{Binding ServiceLife, Converter={StaticResource ServiceLifeToMonthConverter}}" FontSize="22"
+                                       Foreground="#F8F8F8"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </DockPanel>
 </Page>

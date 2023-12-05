@@ -40,14 +40,19 @@ namespace CollegeInventory.ViewModels
         {
             _IsAdmin = isAdmin;
             CurrentPage = new Uri("NotificationPage.xaml", UriKind.Relative);
+
             GoToEquipmentPage = new RelayCommand(goToEquipmentPage, CanOpenPage);
             GoToRoomPage = new RelayCommand(goToRoomPage, CanOpenPage);
+            GoToFurniturePage = new RelayCommand(goToFurniturePage, CanOpenPage);
+            GoToMatrixPage = new RelayCommand(goToMatrixPage, CanOpenPage);
         }
 
         // Commands
 
         public ICommand GoToEquipmentPage { get; set; }
         public ICommand GoToRoomPage { get; set; }
+        public ICommand GoToFurniturePage { get; set; }
+        public ICommand GoToMatrixPage { get; set; }
 
         private bool CanOpenPage(object obj)
         {
@@ -61,6 +66,14 @@ namespace CollegeInventory.ViewModels
         private void goToRoomPage(object obj)
         {
             CurrentPage = new Uri("RoomPage.xaml", UriKind.Relative);
+        }
+        private void goToFurniturePage(object obj)
+        {
+            CurrentPage = new Uri("FurniturePage.xaml", UriKind.Relative);
+        }
+        private void goToMatrixPage(object obj)
+        {
+            CurrentPage = new Uri("MatrixPage.xaml", UriKind.Relative);
         }
     }
 }

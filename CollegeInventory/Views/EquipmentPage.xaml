@@ -12,6 +12,7 @@
     <Page.Resources>
         <ResourceDictionary>
             <converter:MatrixIdToNameConverter x:Key="MatrixIdToNameConverter" />
+            <converter:StatusIdToNameConverter x:Key="StatusIdToNameConverter" />
         </ResourceDictionary>
     </Page.Resources>
     <DockPanel>
@@ -27,30 +28,27 @@
             <Label Content="Фильтрация: " Margin="10 0 0 0" VerticalAlignment="Center" />
             <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         </StackPanel>
-        <ListView ItemsSource="{Binding Equipments}" d:ItemsSource="{d:SampleData ItemCount=5}">
+        <ListView ItemsSource="{Binding Equipments}" d:ItemsSource="{d:SampleData ItemCount=5}"
+                  HorizontalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Margin="7">
-                            <TextBlock FontSize="22" TextWrapping="Wrap">
-                                <Run FontWeight="SemiBold" Text="{Binding InventoryNumber}" />
-                                <LineBreak />
-                                <Run Text="{Binding MatrixId, Converter={StaticResource MatrixIdToNameConverter}}" />
-                            </TextBlock>
+                    <Border Background="#323335" CornerRadius="15" BorderBrush="Transparent"
+                            BorderThickness="1" Padding="15" HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <Label Content="{Binding InventoryNumber}" FontSize="25" FontWeight="Bold"
+                                    Foreground="#F8F8F8"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding MatrixId, Converter={StaticResource MatrixIdToNameConverter}}" FontSize="22" Foreground="#F8F8F8"/>
+                                <Border Background="Green" CornerRadius="10" Padding="5"
+                                        Opacity="0.80">
+                                    <StackPanel>
+                                        <Label Content="{Binding StatusId, Converter={StaticResource StatusIdToNameConverter}}" 
+                                               VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Grid.Column="1">
-                            <Button Style="{DynamicResource MaterialDesignFlatButton}">
-                                <materialDesign:PackIcon Kind="Edit" />
-                            </Button>
-                            <Button Style="{DynamicResource MaterialDesignFlatButton}">
-                                <materialDesign:PackIcon Kind="Delete" />
-                            </Button>
-                        </StackPanel>
-                    </Grid>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

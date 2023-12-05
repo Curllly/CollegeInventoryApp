@@ -46,14 +46,16 @@
                     <TextBlock Text="Оборудование" Style="{DynamicResource MaterialDesignCaptionTextBlock}" />
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatLightButton}">
+            <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
+                    Command="{Binding GoToFurniturePage}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="TableFurniture"
                             Width="25" Height="25"/>
                     <TextBlock Text="Мебель" Style="{DynamicResource MaterialDesignCaptionTextBlock}" />
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatLightButton}">
+            <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
+                    Command="{Binding GoToMatrixPage}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Table"
                                             Width="25" Height="25"/>

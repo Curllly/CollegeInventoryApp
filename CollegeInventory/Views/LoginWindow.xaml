@@ -7,23 +7,42 @@
         xmlns:local="clr-namespace:CollegeInventory.Views"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
-
+        Title="LoginWindow" Height="450" Width="800"
+        Background="#2b2b2e">
     <Window.DataContext>
         <vm:LoginViewModel />
     </Window.DataContext>
-    
-    <StackPanel VerticalAlignment="Center">
-        <materialDesign:PackIcon Kind="PackageVariant"
-                                 HorizontalAlignment="Center"
-                                 Height="75" Width="75"
-                                 Foreground="Red"/>
-        <Label Content="PIN-Код:" Margin="10 0" FontWeight="Bold"/>
-        <TextBox Margin="10 0" Text="{Binding PIN}"/>
-        <CheckBox x:Name="isGuestCheckBox" Content="Режим гостя" Margin="10 20"
-                  IsChecked="{Binding IsGuest}"/>
-        <Button Content="Вход" Margin="10"
-                Command="{Binding GoToMainWindow}"
-                Height="50" FontSize="22" Cursor="Hand"/>
+    <StackPanel VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+        <WrapPanel>
+            <Border MinWidth="500" Background="#323335"
+                    CornerRadius="15" BorderThickness="0" BorderBrush="Transparent">
+                <WrapPanel Orientation="Vertical" HorizontalAlignment="Center">
+                    <materialDesign:PackIcon Kind="PackageVariant"
+                                     HorizontalAlignment="Center"
+                                     Height="75" Width="75"
+                                     Foreground="#ecba58"/>
+                    <Label Content="PIN-Код:" Margin="10 0" FontWeight="Bold"
+                           Foreground="#aeaeae"/>
+                    <TextBox Margin="10 0" Text="{Binding PIN}"
+                             MinWidth="400" Foreground="#aeaeae"
+                             BorderBrush="#aeaeae"/>
+                    <CheckBox x:Name="isGuestCheckBox" Content="Режим гостя" Margin="10 20"
+                                    IsChecked="{Binding IsGuest}"
+                              Foreground="#aeaeae"
+                              Background="#ecba58"/>
+                    <Button Content="Вход" Margin="10"
+                            Command="{Binding GoToMainWindow}"
+                            Height="50" FontSize="22" Cursor="Hand"
+                            Background="#ecba58"
+                            Foreground="#2b2b2e"
+                            BorderBrush="Transparent">
+                    </Button>
+                </WrapPanel>
+            </Border>
+            
+        </WrapPanel>
+        
     </StackPanel>
+    
 </Window>

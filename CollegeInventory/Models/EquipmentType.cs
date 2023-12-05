@@ -9,5 +9,9 @@ public partial class EquipmentType
 
     public string Name { get; set; } = null!;
 
+    public int ObjectTypeId { get; set; }
+
     public virtual ICollection<Matrix> Matrices { get; set; } = new List<Matrix>();
+
+    public virtual ObjectType ObjectType { get; set; } = null!;
 }

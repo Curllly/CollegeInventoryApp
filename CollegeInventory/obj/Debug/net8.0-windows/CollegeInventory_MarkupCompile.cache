@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\App.xaml
-7813338604
+92063961157
 
-28-2099397723
+38-281680220
 2311601285546
-Views\EquipmentPage.xaml;Views\FurniturePage.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\MatrixPage.xaml;Views\NotificationPage.xaml;Views\RoomPage.xaml;
+Views\EquipmentPage.xaml;Views\FurniturePage.xaml;Views\HistoryPage.xaml;Views\LocationPage.xaml;Views\LoginWindow.xaml;Views\MainWindow.xaml;Views\MatrixPage.xaml;Views\NotificationPage.xaml;Views\RoomPage.xaml;
 
 False
 

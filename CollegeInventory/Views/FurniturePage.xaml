@@ -4,11 +4,52 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CollegeInventory.Views"
+      xmlns:converter="clr-namespace:CollegeInventory.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FurniturePage">
-
-    <Grid>
-        
-    </Grid>
+    <Page.Resources>
+        <ResourceDictionary>
+            <converter:MatrixIdToNameConverter x:Key="MatrixIdToNameConverter" />
+            <converter:StatusIdToNameConverter x:Key="StatusIdToNameConverter" />
+        </ResourceDictionary>
+    </Page.Resources>
+    <DockPanel>
+        <Label DockPanel.Dock="Top" FontSize="35" FontWeight="Bold"
+           Content="Мебель" Margin="0 0 0 0" />
+        <StackPanel Orientation="Horizontal"
+                Background="LightGray" DockPanel.Dock="Top">
+            <Label Content="Поиск: " FontSize="18" VerticalAlignment="Center" />
+            <TextBox Width="200" Style="{DynamicResource MaterialDesignOutlinedTextBox}"
+                 />
+            <Label Content="Сортировать по" Margin="10 0 0 0" VerticalAlignment="Center"/>
+            <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}" />
+            <Label Content="Фильтрация: " Margin="10 0 0 0" VerticalAlignment="Center" />
+            <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
+        </StackPanel>
+        <ListView ItemsSource="{Binding Equipments}" d:ItemsSource="{d:SampleData ItemCount=5}"
+              HorizontalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="#323335" CornerRadius="15" BorderBrush="Transparent"
+                        BorderThickness="1" Padding="15" HorizontalAlignment="Stretch">
+                        <StackPanel>
+                            <Label Content="{Binding InventoryNumber}" FontSize="25" FontWeight="Bold"
+                                Foreground="#F8F8F8"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding MatrixId, Converter={StaticResource MatrixIdToNameConverter}}" FontSize="22" Foreground="#F8F8F8"/>
+                                <Border Background="Green" CornerRadius="10" Padding="5"
+                                    Opacity="0.80">
+                                    <StackPanel>
+                                        <Label Content="{Binding StatusId, Converter={StaticResource StatusIdToNameConverter}}" 
+                                           VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </DockPanel>
 </Page>

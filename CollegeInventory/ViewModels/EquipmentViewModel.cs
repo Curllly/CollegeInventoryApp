@@ -1,4 +1,5 @@
 ﻿using CollegeInventory.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,7 +14,9 @@ namespace CollegeInventory.ViewModels
         public ObservableCollection<Equipment> Equipments { get; set; }
         public EquipmentViewModel()
         {
-            Equipments = new ObservableCollection<Equipment>(Session.Instance.Context.Equipments);
+            Equipments = new ObservableCollection<Equipment>(Session.Instance.Context.Equipments
+                .Include(x => x.Matrix).ThenInclude(x => x.EquipmentType).ThenInclude(x => x.ObjectType)
+                .Where(x => x.Matrix.EquipmentType.ObjectType.Id == 2));
         }
     }
 }
