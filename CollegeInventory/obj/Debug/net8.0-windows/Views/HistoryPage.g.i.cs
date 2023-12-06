@@ -57,7 +57,7 @@ namespace CollegeInventory.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/CollegeInventory;V1.0.0.0;component/views/historypage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/CollegeInventory;component/views/historypage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\HistoryPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

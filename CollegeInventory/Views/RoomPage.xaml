@@ -15,7 +15,24 @@
         </ResourceDictionary>
     </Page.Resources>
     <DockPanel>
-        <Label Content="Помещения" DockPanel.Dock="Top" FontSize="25" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Label Content="Помещения" DockPanel.Dock="Top" FontSize="25" FontWeight="Bold"/>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Добавить"
+                    Margin="150 0 0 0"
+                    Click="AddNewRoom"/>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Изменить"
+                    Margin="20 0 0 0"
+                    Command="{Binding EditRoom}"/>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Удалить"
+                    Margin="20 0 0 0"
+                    Command="{Binding DeleteRoom}"/>
+        </StackPanel>
         <StackPanel DockPanel.Dock="Top" Background="Lavender" 
                     Orientation="Horizontal">
             <Label Content="Поиск" />
@@ -25,7 +42,8 @@
             <ComboBox Margin="5" Style="{DynamicResource MaterialDesignOutlinedComboBox}" MinWidth="100"
                       Height="40"/>
         </StackPanel>
-        <ListView ItemsSource="{Binding Rooms}">
+        <ListView ItemsSource="{Binding Rooms}"
+                  SelectedItem="{Binding SelectedRoom}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#323335" CornerRadius="15" BorderThickness="1"

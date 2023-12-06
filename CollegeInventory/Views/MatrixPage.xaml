@@ -24,7 +24,17 @@
                     VerticalAlignment="Center"
                     Content="Добавить"
                     Margin="150 0 0 0"
-                    Click="AddNewProduct"/>
+                    Click="AddNewMatrix"/>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Изменить"
+                    Margin="20 0 0 0"
+                    Command="{Binding EditMatrix}"/>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Content="Удалить"
+                    Margin="20 0 0 0"
+                    Command="{Binding DeleteMatrix}"/>            
         </StackPanel>
         
         <StackPanel Orientation="Horizontal"
@@ -37,7 +47,8 @@
             <Label Content="Фильтрация: " Margin="10 0 0 0" VerticalAlignment="Center" />
             <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         </StackPanel>
-        <ListView ItemsSource="{Binding Matrix}">
+        <ListView ItemsSource="{Binding Matrices}"
+                  SelectedItem="{Binding SelectedMatrix}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#323335" CornerRadius="15" BorderBrush="Transparent"

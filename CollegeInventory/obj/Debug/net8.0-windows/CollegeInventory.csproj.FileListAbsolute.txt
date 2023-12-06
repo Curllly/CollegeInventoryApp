@@ -146,3 +146,13 @@ D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-win
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\LocationPage.g.cs
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\HistoryPage.baml
 D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\LocationPage.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Equipment\AddEquipmentWindow.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Furniture\AddFurnitureWindow.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Location\AddLocationWindow.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Matrix\AddProductWindow.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Room\AddRoomWindow.g.cs
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Equipment\AddEquipmentWindow.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Furniture\AddFurnitureWindow.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Location\AddLocationWindow.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Matrix\AddProductWindow.baml
+D:\Visual Studio Projects\CollegeInventory\CollegeInventory\obj\Debug\net8.0-windows\Views\CRUD\Room\AddRoomWindow.baml

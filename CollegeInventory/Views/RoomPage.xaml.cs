@@ -1,4 +1,6 @@
-﻿using CollegeInventory.ViewModels;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels;
+using CollegeInventory.Views.CRUD.Room;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,13 @@ namespace CollegeInventory.Views
         {
             InitializeComponent();
             DataContext = new RoomViewModel();
+        }
+
+        private void AddNewRoom(object sender, RoutedEventArgs e)
+        {
+            Room room = new Room();
+            AddRoomWindow addRoomWindow = new AddRoomWindow(room);
+            addRoomWindow.Show();
         }
     }
 }

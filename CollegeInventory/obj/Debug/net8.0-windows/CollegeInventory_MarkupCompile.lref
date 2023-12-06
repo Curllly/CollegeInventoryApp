@@ -9,4 +9,9 @@ FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\NotificationP
 FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\RoomPage.xaml;;
 FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\HistoryPage.xaml;;
 FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\LocationPage.xaml;;
+FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\CRUD\Equipment\AddEquipmentWindow.xaml;;
+FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\CRUD\Furniture\AddFurnitureWindow.xaml;;
+FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\CRUD\Location\AddLocationWindow.xaml;;
+FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\CRUD\Matrix\AddProductWindow.xaml;;
+FD:\Visual Studio Projects\CollegeInventory\CollegeInventory\Views\CRUD\Room\AddRoomWindow.xaml;;
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels.CRUD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,17 @@ namespace CollegeInventory.Views.CRUD.Equipment
     /// </summary>
     public partial class AddEquipmentWindow : Window
     {
-        public AddEquipmentWindow()
+        public AddEquipmentWindow(Models.Equipment? equipment)
         {
             InitializeComponent();
+            var viewModel = new AddEquipmentViewModel(equipment);
+            viewModel.CloseWindowRequested += CloseWindow;
+
+            DataContext = viewModel;
+        }
+        private void CloseWindow()
+        {
+            Close();
         }
     }
 }

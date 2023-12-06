@@ -22,25 +22,37 @@
         </StackPanel.Resources>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
                Content="Название" />
-        <TextBox Background="LightGray" Width="300"/>
+        <TextBox Background="LightGray" Width="300"
+                 Text="{Binding EditedMatrix.Name}"/>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
        Content="Тип" />
-        <ComboBox Background="LightGray" Width="300">
-            <ComboBoxItem>Мебель</ComboBoxItem>
-            <ComboBoxItem>Оборудование</ComboBoxItem>
+        <ComboBox Background="LightGray" Width="300"
+                  ItemsSource="{Binding EquipmentTypes}"
+                  SelectedItem="{Binding EditedMatrix.EquipmentType}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <Run Text="{Binding Name}" />
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
                Content="Цена" />
-        <TextBox Background="LightGray" Width="300"/>
+        <TextBox Background="LightGray" Width="300"
+                 Text="{Binding EditedMatrix.Price}"/>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
        Content="Длительность гарантии" />
-        <TextBox Background="LightGray" Width="300"/>
+        <TextBox Background="LightGray" Width="300"
+                 Text="{Binding EditedMatrix.ServiceLife}"/>
 
         <StackPanel Orientation="Horizontal" 
                     HorizontalAlignment="Center"
                     Margin="0 50">
-            <Button Content="Сохранить" />
-            <Button Margin="50 0 0 0" Content="Отменить" />
+            <Button Content="Сохранить" 
+                    Command="{Binding AddOrEdit}"/>
+            <Button Margin="50 0 0 0" Content="Отменить" 
+                    Command="{Binding Exit}"/>
         </StackPanel>
     </StackPanel>
 </Window>

@@ -1,4 +1,7 @@
-﻿using CollegeInventory.ViewModels;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels;
+using CollegeInventory.Views.CRUD.Matrix;
+using CollegeInventory.Views.CRUD.Room;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,9 +30,11 @@ namespace CollegeInventory.Views
             DataContext = new MatrixViewModel();
         }
 
-        private void AddNewProduct(object sender, RoutedEventArgs e)
+        private void AddNewMatrix(object sender, RoutedEventArgs e)
         {
-
+            var matrix = new Models.Matrix();
+            var addProductWindow = new AddProductWindow(matrix);
+            addProductWindow.Show();
         }
     }
 }

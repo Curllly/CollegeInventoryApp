@@ -1,4 +1,7 @@
-﻿using CollegeInventory.ViewModels;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels;
+using CollegeInventory.Views.CRUD.Equipment;
+using CollegeInventory.Views.CRUD.Matrix;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,12 @@ namespace CollegeInventory.Views
         {
             InitializeComponent();
             DataContext = new EquipmentViewModel();
+        }
+        private void AddNewEquipment(object sender, RoutedEventArgs e)
+        {
+            var equipment = new Equipment();
+            var addEquipmentWindow = new AddEquipmentWindow(equipment);
+            addEquipmentWindow.Show();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CollegeInventory.ViewModels.CRUD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,18 @@ namespace CollegeInventory.Views.CRUD.Room
     /// </summary>
     public partial class AddRoomWindow : Window
     {
-        public AddRoomWindow()
+        public AddRoomWindow(Models.Room? room)
         {
             InitializeComponent();
+            var viewModel = new AddRoomViewModel(room);
+            viewModel.CloseWindowRequested += CloseWindow;
+
+            DataContext = viewModel;
         }
+        private void CloseWindow()
+        {
+            Close();
+        }
+
     }
 }

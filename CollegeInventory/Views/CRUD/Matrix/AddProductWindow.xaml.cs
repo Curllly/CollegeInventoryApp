@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels.CRUD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,17 @@ namespace CollegeInventory.Views.CRUD.Matrix
     /// </summary>
     public partial class AddProductWindow : Window
     {
-        public AddProductWindow()
+        public AddProductWindow(Models.Matrix? matrix)
         {
             InitializeComponent();
+            var viewModel = new AddMatrixViewModel(matrix);
+            viewModel.CloseWindowRequested += CloseWindow;
+
+            DataContext = viewModel;
+        }
+        private void CloseWindow()
+        {
+            Close();
         }
     }
 }
