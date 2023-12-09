@@ -15,8 +15,26 @@
         </ResourceDictionary>
     </Page.Resources>
     <DockPanel>
-        <Label DockPanel.Dock="Top" FontSize="35" FontWeight="Bold"
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+            <Label FontSize="35" FontWeight="Bold"
+           VerticalContentAlignment="Center"
            Content="Мебель" Margin="0 0 0 0" />
+            <Button HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Добавить"
+            Margin="150 0 0 0"
+            Click="AddNewFurniture"/>
+            <Button HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Изменить"
+            Margin="20 0 0 0"
+            Command="{Binding EditEquipment}"/>
+            <Button HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Content="Удалить"
+            Margin="20 0 0 0"
+            Command="{Binding DeleteEquipment}"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal"
                 Background="LightGray" DockPanel.Dock="Top">
             <Label Content="Поиск: " FontSize="18" VerticalAlignment="Center" />
@@ -28,7 +46,8 @@
             <ComboBox Width="150" Style="{DynamicResource MaterialDesignOutlinedComboBox}"/>
         </StackPanel>
         <ListView ItemsSource="{Binding Equipments}" d:ItemsSource="{d:SampleData ItemCount=5}"
-              HorizontalAlignment="Stretch">
+              HorizontalAlignment="Stretch"
+                  SelectedItem="{Binding SelectedEquipment}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#323335" CornerRadius="15" BorderBrush="Transparent"

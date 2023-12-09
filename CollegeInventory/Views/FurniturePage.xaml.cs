@@ -1,4 +1,7 @@
-﻿using CollegeInventory.ViewModels;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels;
+using CollegeInventory.Views.CRUD.Equipment;
+using CollegeInventory.Views.CRUD.Furniture;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,13 @@ namespace CollegeInventory.Views
         {
             InitializeComponent();
             DataContext = new FurnitureViewModel();
+        }
+
+        private void AddNewFurniture(object sender, RoutedEventArgs e)
+        {
+            var furniture = new Equipment();
+            var addFurnitureWindow = new AddFurnitureWindow(furniture);
+            addFurnitureWindow.Show();
         }
     }
 }

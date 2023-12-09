@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CollegeInventory.ViewModels.CRUD;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,10 @@ namespace CollegeInventory.Views.CRUD.Furniture
     /// </summary>
     public partial class AddFurnitureWindow : Window
     {
-        public AddFurnitureWindow()
+        public AddFurnitureWindow(Models.Equipment furniture)
         {
             InitializeComponent();
+            DataContext = new AddFurnitureViewModel(furniture);
         }
     }
 }

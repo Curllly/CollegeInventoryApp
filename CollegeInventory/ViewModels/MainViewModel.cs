@@ -7,7 +7,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
@@ -44,9 +46,10 @@ namespace CollegeInventory.ViewModels
             GoToEquipmentPage = new RelayCommand(goToEquipmentPage, CanOpenPage);
             GoToRoomPage = new RelayCommand(goToRoomPage, CanOpenPage);
             GoToFurniturePage = new RelayCommand(goToFurniturePage, CanOpenPage);
-            GoToMatrixPage = new RelayCommand(goToMatrixPage, CanOpenPage);
-            GoToLocationPage = new RelayCommand(goToLocationPage, CanOpenPage);
+            GoToMatrixPage = new RelayCommand(goToMatrixPage, AlwaysCan);
+            GoToLocationPage = new RelayCommand(goToLocationPage, AlwaysCan);
             GoToHistoryPage = new RelayCommand(goToHistoryPage, CanOpenPage);
+            ExitApplication = new RelayCommand(Exit, AlwaysCan);
         }
 
         // Commands
@@ -57,10 +60,19 @@ namespace CollegeInventory.ViewModels
         public ICommand GoToMatrixPage { get; set; }
         public ICommand GoToLocationPage { get; set; }
         public ICommand GoToHistoryPage { get; set; }
+        public ICommand ExitApplication { get; set; }
 
         private bool CanOpenPage(object obj)
         {
             return IsAdmin;
+        }
+        private bool AlwaysCan(object obj)
+        {
+            return true;
+        }
+        private void Exit(object obj)
+        {
+            Application.Current.Shutdown();
         }
 
         private void goToEquipmentPage(object obj)

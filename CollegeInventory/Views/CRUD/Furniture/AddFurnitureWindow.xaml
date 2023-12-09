@@ -22,15 +22,23 @@
         </StackPanel.Resources>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
        Content="Инвентарный номер" />
-        <TextBox Background="LightGray" Width="300"/>
+        <TextBox Background="LightGray" Width="300"
+                 Text="{Binding Furniture.InventoryNumber}"/>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="Элемент из матрицы" />
-        <ComboBox Background="LightGray" Width="300">
+        <ComboBox Background="LightGray" Width="300"
+                  ItemsSource="{Binding Matrices}"
+                  SelectedItem="{Binding Furniture.Matrix}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
         </ComboBox>
         <Label HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="Дата покупки" />
-        <TextBox Background="LightGray" Width="300"
-             />
+        <TextBox Background="LightGray" Width="300" IsReadOnly="True"
+             Text="{Binding Furniture.PurchaseDate}"/>
 
         <StackPanel Orientation="Horizontal" 
             HorizontalAlignment="Center"

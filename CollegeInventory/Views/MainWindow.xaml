@@ -41,8 +41,7 @@
             </Button>
             <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
                     Command="{Binding GoToEquipmentPage}">
-                <StackPanel Orientation="Horizontal"
-                            Background="Yellow">
+                <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ComputerClassic"
                                         Width="25" Height="25"/>
                     <TextBlock Text="Оборудование" Style="{DynamicResource MaterialDesignCaptionTextBlock}" />
@@ -79,7 +78,8 @@
                     <TextBlock Text="Документы" Style="{DynamicResource MaterialDesignCaptionTextBlock}" />
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource MaterialDesignFlatLightButton}">
+            <Button Style="{DynamicResource MaterialDesignFlatLightButton}"
+                    Command="{Binding ExitApplication}">
                 <StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="ExitToApp"
                                  Width="25" Height="25"/>

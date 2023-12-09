@@ -24,7 +24,8 @@
                     VerticalAlignment="Center"
                     Content="Добавить"
                     Margin="150 0 0 0"
-                    Click="AddNewMatrix"/>
+                    Click="AddNewMatrix"
+                    x:Name="addButton"/>
             <Button HorizontalAlignment="Right"
                     VerticalAlignment="Center"
                     Content="Изменить"

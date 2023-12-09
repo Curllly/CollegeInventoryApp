@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace CollegeInventory.ViewModels.CRUD
 {
-    public class AddEquipmentViewModel
+    public class AddEquipmentViewModel : BaseViewModel
     {
         public Equipment Equipment { get; set; }
         public ObservableCollection<Matrix> Matrices { get; set; }
@@ -24,11 +24,14 @@ namespace CollegeInventory.ViewModels.CRUD
             {
                 Equipment.PurchaseDate = DateOnly.FromDateTime(DateTime.Now);
             }
-            if (equipment.StatusId != 1)
+            if (equipment.StatusId == 0)
             {
                 Equipment.StatusId = 1;
             }
-            Matrices = new ObservableCollection<Matrix>(Session.Instance.Context.Matrices);
+            Matrices = new ObservableCollection<Matrix>(Session.Instance.Context.Matrices
+                .Include(x => x.EquipmentType)
+                .ThenInclude(x => x.ObjectType)
+                .Where(x => x.EquipmentType.ObjectType.Id == 2));
             Exit = new RelayCommand(exit, canUse);
             AddOrEdit = new RelayCommand(addOrEdit, canUse);
         }

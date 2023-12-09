@@ -28,6 +28,10 @@ namespace CollegeInventory.Views
         {
             InitializeComponent();
             DataContext = new MatrixViewModel();
+            if (PropertyContainer.IsAdmin == false)
+            {
+                addButton.IsEnabled = false;
+            }
         }
 
         private void AddNewMatrix(object sender, RoutedEventArgs e)

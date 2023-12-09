@@ -37,7 +37,7 @@
                     Orientation="Horizontal">
             <Label Content="Поиск" />
             <TextBox MinWidth="100" Style="{DynamicResource MaterialDesignOutlinedTextBox}" 
-                     Height="40"/>
+                     Height="40" />
             <Label Content="Сортировать по" />
             <ComboBox Margin="5" Style="{DynamicResource MaterialDesignOutlinedComboBox}" MinWidth="100"
                       Height="40"/>
@@ -50,16 +50,19 @@
                             BorderBrush="Transparent" Padding="15">
                         <StackPanel>
                             <StackPanel>
-                                <Label Content="{Binding Number}" FontSize="22"/>
+                                <Label Content="{Binding Number}" FontSize="22"
+                                       Foreground="#F8F8F8"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding RoomTypeId, Converter={StaticResource RoomTypeIdToNameConverter}}"
-                                       FontSize="22"/>
+                                       FontSize="22"
+                                       Foreground="#F8F8F8"/>
                                 <materialDesign:PackIcon Kind="FaceManOutline" VerticalAlignment="Center"
                                                          Foreground="#ecba58"
                                                          Width="22" Height="22"/>
                                 <Label Content="{Binding Responsible}"
-                                       FontSize="22"/>
+                                       FontSize="22"
+                                       Foreground="#F8F8F8"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

@@ -18,6 +18,7 @@ namespace CollegeInventory.ViewModels
     {
         private Matrix selectedMatrix;
         public ObservableCollection<Matrix> Matrices { get; set; }
+        public bool IsAdmin { get; set; } = PropertyContainer.IsAdmin;
         public Matrix SelectedMatrix
         {
             get { return selectedMatrix; }
@@ -52,7 +53,7 @@ namespace CollegeInventory.ViewModels
         }
         bool canUse(object obj)
         {
-            return true;
+            return IsAdmin;
         }
         void deleteMatrix(object obj)
         {
