@@ -20,13 +20,10 @@ namespace CollegeInventory.ViewModels.CRUD
         public AddEquipmentViewModel(Equipment equipment)
         {
             Equipment = equipment;
-            if (equipment.PurchaseDate == null)
-            {
-                Equipment.PurchaseDate = DateOnly.FromDateTime(DateTime.Now);
-            }
             if (equipment.StatusId == 0)
             {
                 Equipment.StatusId = 1;
+                Equipment.PurchaseDate = DateOnly.FromDateTime(DateTime.Now);
             }
             Matrices = new ObservableCollection<Matrix>(Session.Instance.Context.Matrices
                 .Include(x => x.EquipmentType)

@@ -20,13 +20,10 @@ namespace CollegeInventory.ViewModels.CRUD
         public AddFurnitureViewModel(Equipment furniture)
         {
             Furniture = furniture;
-            if (furniture.PurchaseDate == null)
-            {
-                Furniture.PurchaseDate = DateOnly.FromDateTime(DateTime.Now);
-            }
             if (furniture.StatusId == 0)
             {
                 Furniture.StatusId = 1;
+                Furniture.PurchaseDate = DateOnly.FromDateTime(DateTime.Now);
             }
             Exit = new RelayCommand(exit, canUse);
             AddOrEdit = new RelayCommand(addOrEdit, canUse);

@@ -1,4 +1,7 @@
-﻿using CollegeInventory.ViewModels;
+﻿using CollegeInventory.Models;
+using CollegeInventory.ViewModels;
+using CollegeInventory.Views.CRUD.Location;
+using CollegeInventory.Views.CRUD.Matrix;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +28,13 @@ namespace CollegeInventory.Views
         {
             InitializeComponent();
             DataContext = new LocationViewModel();
+        }
+
+        private void addNewLocation(object sender, RoutedEventArgs e)
+        {
+            var location = new RoomsEquipment();
+            var addLocationWindow = new AddLocationWindow(location);
+            addLocationWindow.Show();
         }
     }
 }

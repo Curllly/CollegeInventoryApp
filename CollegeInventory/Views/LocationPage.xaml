@@ -11,12 +11,17 @@
       Title="LocationPage">
     <Page.Resources>
         <ResourceDictionary>
-            <converters:RoomNumberConverter x:Key="RoomNumberConverter" />
+            <converters:RoomNumberConverter x:Key="RoomNumberConverter"/>
         </ResourceDictionary>
     </Page.Resources>
     <DockPanel>
-        <Label DockPanel.Dock="Top" FontSize="35" FontWeight="Bold"
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <Label DockPanel.Dock="Top" FontSize="35" FontWeight="Bold"
                Content="Размещения" Margin="0 0 0 0" />
+            <Button Content="Добавить" 
+                    Click="addNewLocation"/>
+        </StackPanel>
+        
         <StackPanel Orientation="Horizontal"
                     Background="LightGray" DockPanel.Dock="Top">
             <Label Content="Поиск: " FontSize="18" VerticalAlignment="Center" />
